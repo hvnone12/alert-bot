@@ -89,15 +89,15 @@ class Bot:
 		hex_color = (int("0x%02x%02x%02x" % color, 16))
 
 		embed = discord.Embed(
-			title="Updates @ {}".format(datetime.datetime.now().strftime("%H:%M")), type="rich", 
+			title="Ora: {}".format(datetime.datetime.now().strftime("%H:%M")), type="rich", 
 			colour=discord.Colour(hex_color), 
 			)
 
 		if outputs["rsi"]:
-			embed.add_field(name="RSI", value="".join(outputs["rsi"]))
+			embed.add_field(name="Alertă de nivel RSI!", value="".join(outputs["rsi"]))
 
 		if outputs["price_updates"]:
-			embed.add_field(name="Price Updates", value="".join(outputs["price_updates"]))
+			embed.add_field(name="Alertă de preț!", value="".join(outputs["price_updates"]))
 
 		return embed
 
@@ -349,7 +349,7 @@ class Bot:
 		if change >= self._mooning or change <= self._free_fall:
 			self._logger.debug("Change significant, creating output")
 			outs["price_updates"].append( 
-				self._get_output([name, "changed by", str(change), "on", exchange])
+				self._get_output([name, "s-a modificat cu", str(change), "pe", exchange])
 				)
 
 		self._logger.debug("Outputs: {0}".format(outs))
@@ -608,7 +608,7 @@ class Bot:
 
 		"""
 		await self._client.send_message(
-			message.channel, "Hello {0.author.mention} !".format(message)
+			message.channel, "Salut {0.author.mention} !".format(message)
 			)
 
 	async def exit(self, message: discord.Message) -> None:
@@ -624,7 +624,7 @@ class Bot:
 		"""
 
 		await self._client.send_message(
-			message.channel, "Bye {0.author.mention}!".format(message)
+			message.channel, "La revedere {0.author.mention}!".format(message)
 			)
 		sys.exit()
 
