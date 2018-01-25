@@ -1,0 +1,13 @@
+{
+	"token": "NDA2MDU3OTgwNjg1OTc1NTUz.DUtapg.c9aAei-lco0085EnmoAh1rpqZx4",
+	"update_channel": "406065519922249729", 
+	"free_fall": -4,
+	"mooning": 4,
+	"rsi_tick_interval": "thirtyMin",
+	"rsi_time_frame": 14, 
+	"over_bought": 75,
+	"over_sold": 25,
+	"update_interval": 1,
+	"debug": 0,
+	"command_prefix": ";;"
+}
