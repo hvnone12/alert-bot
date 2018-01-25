@@ -349,7 +349,7 @@ class Bot:
 		if change >= self._mooning or change <= self._free_fall:
 			self._logger.debug("Change significant, creating output")
 			outs["price_updates"].append( 
-				self._get_output([name, "s-a modificat cu", str(change), "pe", exchange])
+				self._get_output([name, "s-a modificat cu", str(change), "% pe", exchange])
 				)
 
 		self._logger.debug("Outputs: {0}".format(outs))
